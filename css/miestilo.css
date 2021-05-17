@@ -1,0 +1,352 @@
+/* Resets y Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: rgba(101, 172, 166, 0.7);
+    width: 100%;
+    margin: auto;
+    height: 100px;
+    display: flex; /* FlexBox */
+    align-items: center; /* Centramos verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    flex-wrap: wrap; /* Si no cabe el texto en el Header salta */
+    text-align: center; /* Centramos el texto cuando salte de línea */
+}
+
+header > img {
+    width: 100px;
+    height: 85px;
+}
+
+header > h1 {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    margin: 20px;
+}
+
+header > h1 > span {
+    font-size: 40px;
+}
+
+article {
+    text-align: center;
+}
+
+article > section {
+    margin-top: 40px;
+}
+
+article > section > h1 {
+    color: #CA243C;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    font-size: 35px;
+    margin-top: -20px;
+    margin-bottom: -5px;
+}
+
+article > section > h1 > span {
+    font-size: 40px;
+}
+
+article > section > p {
+    margin: 20px;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-align: justify;
+}
+
+article > section > img {
+    width: 36.5%;
+    height: 46.5%;
+    margin: 20px;
+}
+
+.responsive-tabs {
+    margin: 20px;
+    width: 80%;
+}
+
+.responsive-tabs .estado {
+    display: none; /* Ocultamos los input radio */
+}
+
+.responsive-tabs .flex-tabs {
+    display: flex; /* Flex Tabs */
+    justify-content: space-between; /* Espacio entre ellos */
+    flex-wrap: wrap; /* Wrap por si no caben */
+    margin-top: 15px;
+}
+
+.responsive-tabs .flex-tabs .tab {
+    flex-grow: 1; /* Indicamos que crezcan por igual */
+}
+
+/* Configuración del panel. Por defecto todos ocultos */
+.responsive-tabs .flex-tabs .panel {
+    background-color: white;
+    padding: 20px;
+    min-height: 250px;
+    width: 100%;
+    flex-basis: auto;
+    display: none;
+}
+
+/* Configuración de los tabs. */
+.responsive-tabs .tab {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    color: #AAA9AC;
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+    border-left: 10px solid #AAA9AC;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid #AAA9AC;
+    text-align: center;
+}
+
+.responsive-tabs .tab > span {
+    font-size: 22px;
+}
+
+.responsive-tabs .tab:hover {
+    background-color: white;
+    color: #CA243C;
+}
+
+/* Al seleccionarlo cambiamos estilo del label */
+#tab-uno:checked ~ .tabs #tab-uno-label,
+#tab-dos:checked ~ .tabs #tab-dos-label,
+#tab-tres:checked ~ .tabs #tab-tres-label,
+#tab-cuatro:checked ~ .tabs #tab-cuatro-label,
+#tab-cinco:checked ~ .tabs #tab-cinco-label {
+    background-color: white;
+    cursor: default;
+    border-left-color: #CA243C;
+    font-weight: bold;
+    color: #CA243C;
+    border-bottom: none;
+}
+
+/* Al seleccionar la etiqueta mostramos el panel */
+#tab-uno:checked ~ .tabs #tab-uno-panel,
+#tab-dos:checked ~ .tabs #tab-dos-panel,
+#tab-tres:checked ~ .tabs #tab-tres-panel,
+#tab-cuatro:checked ~ .tabs #tab-cuatro-panel,
+#tab-cinco:checked ~ .tabs #tab-cinco-panel {
+    display: block;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid #AAA9AC;
+    width: 232px;
+    height: 856px;
+    padding: 15px;
+    position: absolute;
+    left: 81.5%;
+    top: 17.5vh;
+    background-color: white;
+}
+
+aside > img {
+    width: 100%;
+    height: 80%;
+    margin: 8px 0px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    background-color: rgba(101, 172, 166, 0.7);
+    width: 100%;
+    height: 6vh;
+    margin-top: 12px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+footer > p {
+    position: relative;
+    top: 15px;
+}
+
+.rrss {
+    width: 100px;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    left: 76vw;
+    top: -5px;
+}
+
+.rrss > a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+#tab-cuatro-panel > article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#tab-cuatro-panel > article > section {
+    width: 50%;
+    align-content: space-around;
+}
+
+#tab-cuatro-panel > article > section > h1 {
+    font-size: 28.2px;
+}
+
+#tab-cuatro-panel > article > section > h1 > span {
+    font-size: 33.2px;
+}
+
+#tab-cuatro-panel > article > section > p {
+    font-size: 15px;
+}
+
+/* Configuración de vista Responsive */
+@media (max-width: 600px) {
+
+    header {
+        height: 200px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header > img {
+        display: none;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .rrss {
+        display: none;
+    }
+
+    #tab-cuatro-panel > article > section {
+        width: 100%;
+        align-content: center;
+    }
+
+    #tab-tres-panel > article > section > iframe,
+    #tab-cuatro-panel > article > section > iframe,
+    #tab-cinco-panel > article > section > iframe {
+        width: 420px;
+        height: 266px;
+    }
+
+    .flex-tabs {
+        flex-direction: column;
+    }
+
+    .flex-tabs .tab {
+        background: white;
+        border-bottom: 1px solid #AAA9AC;
+    }
+
+    .flex-tabs .tab:last-of-type {
+        border-bottom: none;
+    }
+
+    /* Asociamos cada etiqueta a cada panel para que se muestre forma correcta */
+    .flex-tabs #tab-uno-label {
+        order: 1;
+    }
+
+    .flex-tabs #tab-dos-label {
+        order: 3;
+    }
+
+    .flex-tabs #tab-tres-label {
+        order: 5;
+    }
+
+    .flex-tabs #tab-cuatro-label {
+        order: 7;
+    }
+
+    .flex-tabs #tab-cinco-label {
+        order: 9;
+    }
+
+    .flex-tabs #tab-uno-panel {
+        order: 2;
+    }
+
+    .flex-tabs #tab-dos-panel {
+        order: 4;
+    }
+
+    .flex-tabs #tab-tres-panel {
+        order: 6;
+    }
+
+    .flex-tabs #tab-cuatro-panel {
+        order: 8;
+    }
+
+    .flex-tabs #tab-cinco-panel {
+        order: 10;
+    }
+
+    #tab-uno:checked ~ .tabs #tab-uno-label,
+    #tab-dos:checked ~ .tabs #tab-dos-label,
+    #tab-tres:checked ~ .tabs #tab-tres-label,
+    #tab-cuatro:checked ~ .tabs #tab-cuatro-label,
+    #tab-cinco:checked ~ .tabs #tab-cinco-label {
+        border-bottom: none;
+    }
+
+    #tab-uno:checked ~ .tabs #tab-uno-panel,
+    #tab-dos:checked ~ .tabs #tab-dos-panel,
+    #tab-tres:checked ~ .tabs #tab-tres-panel,
+    #tab-cuatro:checked ~ .tabs #tab-cuatro-panel,
+    #tab-cinco:checked ~ .tabs #tab-cinco-panel {
+        border-bottom: 1px solid #AAA9AC;
+    }
+
+    .responsive-tabs .tab {
+        text-align: justify;
+    }
+
+    #tab-tres-panel > article > section > iframe, #tab-cuatro-panel > article > section > iframe, #tab-cinco-panel > article > section > iframe {
+        width: 390px;
+        height: 266px;
+    }
+
+    article > section > img {
+        width: 90.5%;
+        height: 46.5%;
+        margin: 20px;
+    }
+
+}
